@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id='Description'>The sample showcases the jqxTreeMap widget. jqxTreeMap displays hierarchical data as a set of nested rectangles. Each branch of the tree is given a rectangle, which is then tiled with smaller rectangles representing sub-branches. A leaf node's rectangle has an area proportional to a specified dimension on the data.</title>
+    <script src="../../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../../jqwidgets/jqxcore.js"></script>
+    <script src="../../jqwidgets/jqxtooltip.js"></script>
+    <script src="../../jqwidgets/jqxtreemap.js"></script>
+    <script type="text/javascript" src="../../scripts/demos.js"></script>
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" />
+    <script>
+        $(function () {
+            var data = [
+            {
+                label: 'Data Structures',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Algorithms',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Systems Programming',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Source Code Version Control',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Build Automation',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Automated testing',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Problem Decomposition',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Systems Decomposition',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Communication',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Code Organization within a file',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Code organization across files',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Source Tree Orgranization',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Code Readability',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Defensive Coding',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Error handling',
+                value: null,
+                color: '#B3FAFF'
+            },
+
+            {
+                label: 'IDE',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'API',
+                value: null,
+                color: '#B3FAFF'
+            },
+            {
+                label: 'Frameworks',
+                value: null,
+                color: '#B3FAFF'
+            },
+
+
+
+//---------------------------------------------------------------------------------------------------            
+            //data structures
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Data Structures',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Data Structures" }
+            },
+            
+            {
+                label: '(level1)n^2',
+                value: 11,
+                parent: 'Data Structures',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Data Structures" }
+            },
+            {
+                label: '(level2)n',
+                value: 3,
+                parent: 'Data Structures',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Data Structures" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 3,
+                parent: 'Data Structures',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Data Structures" }
+                
+            },
+            //algorithms
+            {
+                label: '(level0)2^n',
+                value: 4,
+                parent: 'Algorithms',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Algorithms" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 11,
+                parent: 'Algorithms',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Algorithms" }
+            },
+            {
+                label: '(level2)n',
+                value: 5,
+                parent: 'Algorithms',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Algorithms" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 2,
+                parent: 'Algorithms',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Algorithms" }
+                
+            },
+            
+            //System programming
+            
+            {
+                label: '(level0)2^n',
+                value: 6,
+                parent: 'Systems Programming',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Systems Programming" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 10,
+                parent: 'Systems Programming',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Systems Programming" }
+            },
+            {
+                label: '(level2)n',
+                value: 1,
+                parent: 'Systems Programming',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Systems Programming" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 2,
+                parent: 'Systems Programming',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Systems Programming" }
+                
+            },
+
+            //Source Code Version Control
+
+            {
+                label: '(level0)2^n',
+                value: 0,
+                parent: 'Source Code Version Control',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Source Code Version Control" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 1,
+                parent: 'Source Code Version Control',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Source Code Version Control" }
+            },
+            {
+                label: '(level2)n',
+                value: 9,
+                parent: 'Source Code Version Control',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Source Code Version Control" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 11,
+                parent: 'Source Code Version Control',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Source Code Version Control" }
+                
+            },
+
+            //Build Automation
+            {
+                label: '(level0)2^n',
+                value: 7,
+                parent: 'Build Automation',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Build Automation" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 6,
+                parent: 'Build Automation',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Build Automation" }
+            },
+            {
+                label: '(level2)n',
+                value: 4,
+                parent: 'Build Automation',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Build Automation" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 0,
+                parent: 'Build Automation',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Build Automation" }
+                
+            },
+
+            //Automated testing
+            {
+                label: '(level0)2^n',
+                value: 6,
+                parent: 'Automated testing',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Automated testing" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 6,
+                parent: 'Automated testing',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Automated testing" }
+            },
+            {
+                label: '(level2)n',
+                value: 1,
+                parent: 'Automated testing',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Automated testing" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 1,
+                parent: 'Automated testing',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Automated testing" }
+                
+            },
+
+            //Problem Decomposition
+
+            {
+                label: '(level0)2^n',
+                value: 2,
+                parent: 'Problem Decomposition',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Problem Decomposition" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 6,
+                parent: 'Problem Decomposition',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Problem Decomposition" }
+            },
+            {
+                label: '(level2)n',
+                value: 9,
+                parent: 'Problem Decomposition',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Problem Decomposition" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 1,
+                parent: 'Problem Decomposition',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Problem Decomposition" }
+                
+            },
+
+            //Systems Decomposition
+            {
+                label: '(level0)2^n',
+                value: 6,
+                parent: 'Systems Decomposition',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Systems Decomposition" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 5,
+                parent: 'Systems Decomposition',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Systems Decomposition" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Systems Decomposition',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Systems Decomposition" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 0,
+                parent: 'Systems Decomposition',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Systems Decomposition" }
+                
+            },
+
+            //Communication
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Communication',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Communication" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Communication',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Communication" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Communication',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Communication" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Communication',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Communication" }
+                
+            },
+
+            //Code Organization within a file
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Code Organization within a file',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Code Organization within a file" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Code Organization within a file',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Code Organization within a file" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Code Organization within a file',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Code Organization within a file" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Code Organization within a file',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Code Organization within a file" }
+                
+            },
+
+            //Code Organization within a file
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Code organization across files',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Code organization across files" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Code organization across files',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Code organization across files" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Code organization across files',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Code organization across files" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Code organization across files',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Code organization across files" }
+                
+            },
+
+            //Source Tree Organisation
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Source Tree Orgranization',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Source Tree Orgranization" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Source Tree Orgranization',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Source Tree Orgranization" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Source Tree Orgranization',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Source Tree Orgranization" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Source Tree Orgranization',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Source Tree Orgranization" }
+                
+            },
+
+
+            //Code Readability
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Code Readability',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Code Readability" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Code Readability',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Code Readability" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Code Readability',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Code Readability" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Code Readability',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Code Readability" }
+                
+            },
+
+            //Defensive Coding
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Defensive Coding',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Defensive Coding" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Defensive Coding',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Defensive Coding" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Defensive Coding',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Defensive Coding" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Defensive Coding',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Defensive Coding" }
+                
+            },
+            //Error handling 
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Error handling',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Error handling " }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Error handling',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Error handling " }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Error handling',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Error handling" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Error handling',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Error handling" }
+                
+            },
+
+
+            //IDE
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'IDE',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "IDE" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'IDE',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "IDE" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'IDE',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "IDE" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'IDE',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "IDE" }
+                
+            },
+
+            //API
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'API',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "API" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'API',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "API" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'API',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "API" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'API',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "API" }
+                
+            },
+
+            //Frameworks
+
+            {
+                label: '(level0)2^n',
+                value: 5,
+                parent: 'Frameworks',
+                data: { description: "Doesn't know the difference between Array and LinkedList", title: "Frameworks" }
+            },
+            {
+                label: '(level1)n^2',
+                value: 3,
+                parent: 'Frameworks',
+                data: { description: "Able to explain and use Arrays, LinkedLists, Dictionaries etc in practical programming tasks", title: "Frameworks" }
+            },
+            {
+                label: '(level2)n',
+                value: 6,
+                parent: 'Frameworks',
+                data: { description: "Knows space and time tradeoffs of the basic data structures, Arrays vs LinkedLists, Able to explain how hashtables can be implemented and can handle collisions, Priority queues and ways to implement them etc", title: "Frameworks" }
+            },
+            {
+                label: '(level3)log(n)',
+                value: 9,
+                parent: 'Frameworks',
+                data: { description: "Knowledge of advanced data structures like B-trees, binomial and fibonacci heaps, AVL/Red Black trees, Splay Trees, Skip Lists, tries etc.", title: "Frameworks" }
+                
+            },
+
+
+
+
+
+
+            
+            
+            
+            
+            
+            ];
+  
+            
+
+            $('#treemap').jqxTreeMap({
+                width: 1050,
+                height: 1050,
+                source: data,
+                colorRange: 50,
+                renderCallbacks: {
+                    '*': function (element, value) {
+                        if (value.data) {
+                            element.jqxTooltip({
+                                content: '<div><div style="font-weight: bold; max-width: 200px; font-family: verdana; font-size: 13px;">' + value.data.title + '</div><div style="width: 200px; font-family: verdana; font-size: 12px;">' + value.data.description + '</div></div>',
+                                position: 'mouse',
+                                autoHideDelay: 6000,
+                                theme: theme
+                            });
+                        } else if (value.data === undefined) {
+                            element.css({
+                                backgroundColor: '#fff',
+                                border: '4px solid #000'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+</script>
+</head>
+<body>
+    <div id="treemap"></div>
+</body>
+</html>
